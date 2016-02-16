@@ -5,3 +5,7 @@ dist/
 app/js/templates.js
 *Thumbs.db
 nohup.out
+*Thumbs.db
+*nb-configuration.xml
+*target/
+Ejercicio1/BackEnd/UMGRestFull/*/lib/

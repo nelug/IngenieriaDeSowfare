@@ -1,0 +1,29 @@
+body {
+  margin: 15px;
+  background: #f7f8f9;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.test {
+  transition: all .5s ease;
+}
+
+.test-enter, .test-leave {
+  opacity: 0;
+  transform: translate3d(10px, 0, 0);
+}
+
+.v-link-active {
+  &:active,
+  &:hover,
+  &:focus {
+    color: red !important;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}

@@ -1,0 +1,7 @@
+analisis/resultado-analisis.html
+node_modules/
+app/lib/
+dist/
+app/js/templates.js
+*Thumbs.db
+nohup.out

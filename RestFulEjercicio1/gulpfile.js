@@ -139,7 +139,7 @@ gulp.task('copiar', ['limpiar'], function() {
       })())
       .pipe(gulp.dest('dist/img'));
 
-   gulp.src('./app/lib/bootstrap/**/*.{ttf,woff,eof,svg}')
+   gulp.src('./app/lib/bootstrap/fonts/*.{ttf,woff,eof,svg}')
       .pipe(gulp.dest('./app/fonts'));
 
    return gulp.src('./app/index.html')

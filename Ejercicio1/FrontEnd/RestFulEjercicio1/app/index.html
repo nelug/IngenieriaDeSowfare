@@ -15,14 +15,22 @@
 </head>
 <body>
    <div id="app" cass="raw">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
          <div class="panel panel-default">
             <div class="panel-heading">
                <h3 class="panel-title">
                   <i class="glyphicon glyphicon-refresh" style="cursor:pointer" v-on="click: responseHTTP">
                      {{ titulo }}
                   </i>
+                  <div class="row">
+                     <div class="col-md-8">
+                        <input class="form-control" v-on="keyup:responseExternalHTTP() | key 'enter'" v-model="search">
+                     </div>
+                     <div class="col-md-4">
+                        <button v-on="click: verDataResquest" class="form-control btn-info">Ver Data</button>
+                     </div>
+                  </div>
                </h3>
             </div>
             <div class="panel-body">
@@ -32,7 +40,7 @@
             </div>
          </div>
       </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-2"></div>
    </div>
    <!-- build:js js/vendor.min.js -->
    <!-- bower:js -->
@@ -45,6 +53,7 @@
    <!-- build:js js/app.min.js -->
    <!-- inject:js -->
    <script src="/js/app.js"></script>
+   <script src="/js/templates.js"></script>
    <!-- endinject -->
    <!-- endbuild -->
 </body>

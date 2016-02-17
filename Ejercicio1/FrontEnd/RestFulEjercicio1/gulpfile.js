@@ -25,7 +25,7 @@ gulp.task('server', function() {
    gulp.src('app')
       .pipe(connect({
          host: '127.0.0.1',
-         port: '4000',
+         port: '8000',
          livereload: {
             enable: true,
             filter: function(filename) {
@@ -40,6 +40,30 @@ gulp.task('server', function() {
          proxies: [{
             source: '/UMGRestFull-1.0/v1/',
             target: 'http://192.168.124.231:8080/UMGRestFull-1.0/v1/'
+         }],
+         open: true
+      }));
+});
+
+gulp.task('server1', function() {
+   gulp.src('app')
+      .pipe(connect({
+         host: '127.0.0.1',
+         port: '8000',
+         livereload: {
+            enable: true,
+            filter: function(filename) {
+               if (filename.match(/.js$/)) {
+                  return false;
+               }
+
+               return true;
+            }
+         },
+         fallback: 'index.html',
+         proxies: [{
+            source: '/resultados/ficha/',
+            target: 'http://resultados.as.com/resultados/ficha/'
          }],
          open: true
       }));
@@ -103,6 +127,7 @@ gulp.task('vigilar', function() {
 
 //Tarea default para gulp
 gulp.task('desarrollo', ['server', 'vigilar']);
+gulp.task('desarrollo1', ['server1', 'vigilar']);
 
 
 //Tarea para limpiar directorio dist
